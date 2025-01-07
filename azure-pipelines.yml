@@ -30,3 +30,13 @@ stages:
         tags: |
           $(Build.BuildId)
           latest
+
+- stage: Deply
+  displayName: Deploy Container
+  dependsOn: Build
+  jobs:
+  - job: Deploy
+    displayName: Deploy
+    pool:
+      vmImage: ubuntu-latest
+    steps:
