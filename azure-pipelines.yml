@@ -40,3 +40,8 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
+    - task: AzureWebAppContainer@1
+      inputs:
+        azureSubscription: 'Pay-As-You-Go (c4c44e31-c0c8-401b-824e-3fba6c4e6b68)'
+        appName: 'webapp-test'
+        containers: 'yesh01b/docker-webapp'
